@@ -73,7 +73,7 @@ class ProductEditForm(forms.Form):
     description = forms.CharField(max_length=50)
     category = forms.CharField(max_length=50)
     current_price = forms.DecimalField(max_digits=5, decimal_places=2)
-    owner = forms.ModelChoiceField(label='Owner ID', required=False, queryset=hmod.Legal_Entity.objects.all())
+    owner = forms.ModelChoiceField(label='Owner ID', required=False, queryset=hmod.User.objects.all())
 
 
 ##################################################
@@ -90,13 +90,13 @@ def create(request):
     description = models.TextField(max_length=50)
     category = models.TextField(max_length=15)
     current_price = models.FloatField()
-    owner = models.ForeignKey('Legal_Entity')
+    owner = models.ForeignKey('User') # this used to reference Legal_Entity
     '''
     product.name = ''
     product.description = ''
     product.category = 'antiques'
     product.current_price = 10
-    product.owner = hmod.Legal_Entity.objects.get(id=1)
+    product.owner = hmod.User.objects.get(id=1)
     product.save()
 
     return HttpResponseRedirect('/homepage/products.edit/{}/'.format(product.id))

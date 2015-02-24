@@ -73,7 +73,7 @@ class ItemEditForm(forms.Form):
     description = forms.CharField(max_length=50)
     value = forms.IntegerField()
     standard_rental_price = forms.DecimalField(max_digits=5, decimal_places=2)
-    owner = forms.ModelChoiceField(label='Owner ID', required=False, queryset=hmod.Legal_Entity.objects.all())
+    owner = forms.ModelChoiceField(label='Owner ID', required=False, queryset=hmod.User.objects.all())
 
 
 ##################################################
@@ -89,7 +89,7 @@ def create(request):
     item.description = ''
     item.value = 0
     item.standard_rental_price = 0
-    item.owner = hmod.Legal_Entity.objects.get(id=1)
+    # item.owner = hmod.User.objects.get(id=1)
     item.save()
 
     return HttpResponseRedirect('/homepage/items.edit/{}'.format(item.id))
