@@ -2,7 +2,6 @@
 import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'sprint2.settings'
 import django; django.setup()
-from django.contrib.auth import models as conmod
 import homepage.models as hmod
 import datetime
 

@@ -1,8 +1,7 @@
 __author__ = 'MCR'
 
-from django.conf import settings
-from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.http import HttpRequest
+
+from django.http import HttpResponseRedirect
 from django import forms
 from django_mako_plus.controller import view_function
 from django.shortcuts import redirect
@@ -33,6 +32,7 @@ def process_request(request):
 
 @view_function
 def edit(request):
+
     if not request.user.is_authenticated():
         return redirect('/homepage/login/?next=%s' % request.path)
     if not request.user.is_staff:
@@ -78,6 +78,7 @@ class EventEditForm(forms.Form):
 
 @view_function
 def create(request):
+
     if not request.user.is_authenticated():
         return redirect('/homepage/login/?next=%s' % request.path)
     if not request.user.is_staff:
@@ -100,6 +101,7 @@ def create(request):
 
 @view_function
 def delete(request):
+
     if not request.user.is_authenticated():
         return redirect('/homepage/login/?next=%s' % request.path)
     if not request.user.is_staff:
