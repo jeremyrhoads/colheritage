@@ -1,0 +1,19 @@
+<%inherit file="base.htm" />
+
+<%block name="content">
+    <div class="content">
+        <h3>Congratulations -- you've successfully created a new django-mako-plus app!</h3>
+        <h4>Next Up: Go through the django-mako-plus tutorial and add Javascript, CSS, and urlparams to this page.</h4>
+
+        <!-- Label -->
+        <h4><span class="label label-default">Welcome friends!</span></h4>
+
+
+
+        <button id="server-time-button">Refresh Server Time</button>
+        <br/>
+
+        <p class="server-time">The current server time is ${ now }.</p>
+        <p class="browser-time">The current browser time is...</p>
+    </div>
+</%block>

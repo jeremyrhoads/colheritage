@@ -1,0 +1,36 @@
+<%inherit file="base.htm" />
+<%inherit file="base_events.html" />
+
+<%block name="content">
+    <div class="content">
+        <h4>Public Event Management</h4>
+
+
+
+        <table id="users-table" class="table table-striped table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Event</th>
+                <th>
+                    <a href="/homepage/public_events.create/" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Venue</a>
+                </th>
+
+            </tr>
+            %for pub_event in pub_events:
+            <tr>
+                <td>${pub_event.id}</td>
+                <td>${pub_event.name}</td>
+                <td>${pub_event.description}</td>
+                <td>${pub_event.event}</td>
+                <td>
+                   <a href="/homepage/public_events.edit/${pub_event.id}" class="btn btn-primary btn-sm">Edit</a>
+                </td>
+
+            </tr>
+        %endfor
+
+        </table>
+    </div>
+</%block>

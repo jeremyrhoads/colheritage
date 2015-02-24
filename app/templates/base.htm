@@ -1,0 +1,96 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+
+## set up a StaticRenderer object to enable the CSS/JS automatic inclusion magic.
+<%! from django_mako_plus.controller import static_files %>
+<%  static_renderer = static_files.StaticRenderer(self) %>
+
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <head>
+    
+    <title>homepage</title>
+    
+    ## add any site-wide scripts or CSS here; for example, jquery:
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <link rel="icon" type="image/x-icon" href="${ STATIC_URL }homepage/media/favicon.ico">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+    ## render the css with the same name as this page
+    ${ static_renderer.get_template_css(request, context)  }
+  
+  </head>
+  <body>
+  
+    <header>
+        Colonial Heritage Foundation
+    </header>
+
+    <!-- This will be be the main nav bar that lies right under the main header -->
+    <div class="col-md-12" id="wrap">
+        <!-- list of main nav links -->
+
+        <%block name="mainnav">
+		  <ul class="navbar">
+			 <li><a href="/homepage/index/">Home</a></li>
+			 <li><a href="#">Events</a>
+				<ul>
+				   <li><a href="/homepage/events/">Events</a></li>
+				   <li><a href="/homepage/public_events">Public Events</a></li>
+				   <li><a href="/homepage/venues/">Venues</a></li>
+				</ul>
+			 </li>
+			 <li><a href="#">Inventory</a>
+				<ul>
+				   <li><a href="/homepage/items/">Items</a></li>
+				   <li><a href="/homepage/products/">Products</a></li>
+				</ul>
+			 </li>
+			 <li><a href="/homepage/users/">Users</a></li>
+			 <li><a href="#">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+				<ul>
+				   <li><a href="/homepage/account/">My Account</a></li>
+				   <li><a href="/homepage/logout/">Log Out</a></li>
+				</ul>
+			 </li>
+		  </ul>
+        </%block>
+
+    </div>
+
+    <div class="container">
+
+        <!-- Left Column -->
+        <nav class="col-md-2">
+            <%block name="navigation">
+                <ul class="nav nav-pills nav-stacked">
+                    <li role="button"><a href="/homepage/index">About</a></li>
+                    <li role="button"><a href="#">Contact</a></li>
+                    <li role="button"><a href="/homepage/terms">Terms</a></li>
+                </ul>
+            </%block>
+        </nav>
+
+        <!-- Center Column -->
+        <div class="col-md-10">
+            <%block name="content">
+            Site content goes here in sub-templates.
+            </%block>
+        </div>
+
+    </div>
+
+    <footer class="panel-footer">
+        Some footer links
+    </footer>
+  
+    ## render the JS with the same name as this page
+    ${ static_renderer.get_template_js(request, context)  }
+  
+  </body>
+</html>
