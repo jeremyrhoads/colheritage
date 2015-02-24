@@ -1,5 +1,5 @@
 """
-Django settings for test_dmp project.
+Django settings for sprint2 project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -26,7 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL = 'app.User'
+AUTH_USER_MODEL = 'homepage.User'
 
 # Application definition
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mako_plus.controller',
-    'app',
+    'homepage',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'sprint2.urls'
 
-WSGI_APPLICATION = 'test_dmp.wsgi.application'
+WSGI_APPLICATION = 'sprint2.wsgi.application'
 
 
 # Database
@@ -126,12 +126,12 @@ LOGGING = {
 }
 
 ###############################################################
-###   Specific settings for the Django-Mako-Plus app
+###   Specific settings for the Django-Mako-Plus homepage
 
-# identifies where the Mako template cache will be stored, relative to each app
+# identifies where the Mako template cache will be stored, relative to each homepage
 DMP_TEMPLATES_CACHE_DIR = 'cached_templates'
 
-# the default app and page to render in Mako when the url is too short
+# the default homepage and page to render in Mako when the url is too short
 DMP_DEFAULT_PAGE = 'index'
 DMP_DEFAULT_APP = 'homepage'
 
