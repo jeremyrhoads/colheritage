@@ -104,7 +104,7 @@ def create(request):
 
 
 ##################################################
-# Delete a venue
+# Delete a venue hehe
 ##################################################
 
 @view_function
