@@ -10,15 +10,19 @@ templater = get_renderer('homepage')
 
 @view_function
 def process_request(request):
-  template_vars = {
-    'now': datetime.now().strftime(request.urlparams[0] if request.urlparams[0] else '%H:%M'),
-    'timecolor': random.choice([ 'red', 'blue', 'green', 'brown' ]),
-  }
-  return templater.render_to_response(request, 'index.html', template_vars)
+
+    template_vars = {
+        'now': datetime.now().strftime(request.urlparams[0] if request.urlparams[0] else '%H:%M'),
+        'timecolor': random.choice([ 'red', 'blue', 'green', 'brown' ]),
+    }
+
+    return templater.render_to_response(request, 'index.html', template_vars)
 
 @view_function
 def gettime(request):
-  template_vars = {
-    'now': datetime.now(),
-  }
-  return templater.render_to_response(request, 'index_time.html', template_vars)
+
+    template_vars = {
+        'now': datetime.now(),
+    }
+
+    return templater.render_to_response(request, 'index_time.html', template_vars)
