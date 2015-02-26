@@ -17,7 +17,7 @@ group = Group()
 group.name = "Admin"
 group.save()
 group.permissions.add(permission)
-permission = Permission.objects.get(id=82)
+permission = Permission.objects.get(id=94)
 group.permissions.add(permission)
 
 user = hmod.User()
@@ -45,7 +45,7 @@ group = Group()
 group.name = "Manager"
 group.save()
 group.permissions.add(permission)
-permission = Permission.objects.get(id=83) #
+permission = Permission.objects.get(id=95) #
 group.permissions.add(permission)
 
 user = hmod.User()
@@ -73,7 +73,7 @@ group = Group()
 group.name = "User"
 group.save()
 group.permissions.add(permission)
-permission = Permission.objects.get(id=84)
+permission = Permission.objects.get(id=96)
 group.permissions.add(permission)
 
 user = hmod.User()
