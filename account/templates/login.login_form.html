@@ -1,0 +1,20 @@
+<%inherit file="/homepage/templates/base_ajax.htm" />
+
+<%block name="mainnav"></%block>
+
+<%block name="navigation"></%block>
+
+<%!
+    import random
+%>
+
+<%block name="content">
+        <form id="login_form" method="post" action="/account/login.login_form/">
+            <table>
+                ${ form }
+            </table>
+            <br/>
+            <button class="btn btn-warning" type="submit">Login</button>
+        </form>
+
+</%block>

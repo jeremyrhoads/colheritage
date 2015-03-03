@@ -1,0 +1,38 @@
+<%inherit file="/homepage/templates/base.htm" />
+
+<%block name="mainnav"></%block>
+
+<%block name="navigation"></%block>
+
+<%!
+    import random
+%>
+
+<%block name="content">
+    <div class="content">
+        <h1>${ random.randint(0, 10000) }</h1>
+
+        <h5 style="margin: 20px auto 10px auto">
+            This portal is for the exclusive use of current employees/volunteers of the Colonial Heritage Foundation.
+        </h5>
+
+        <p style="font-size: 8px; width: 70%; margin: 0 0 20px 0;">
+            Use of this portal by any other person is not authorized. By accessing this portion of the site, you are
+            acknowledging that the configuration and software comprising the system and the information contained therein is
+            proprietary and confidential, is the exclusive property of CHF, and is deemed confidential information pursuant
+            to the Confidentiality Agreement that you signed with CHF. You may not use this confidential information for
+            any purposes outside your employment with CHF or disclose this confidential information to any third-party for
+            any reason. Unauthorized access to or use of this system will be prosecuted to the fullest extent of the law.
+        </p>
+        <div id="login_form_container">
+            <form id="login_form" method="post" action="/account/login.login_form/">
+                <table>
+                    ${ form }
+                </table>
+                <br/>
+                <button class="btn btn-warning" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+</%block>
