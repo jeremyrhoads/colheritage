@@ -19,6 +19,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="${ STATIC_URL }homepage/media/jquery.form.js"></script>
+    <script src="${ STATIC_URL }homepage/media/jquery.loadmodal.js"></script>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="${ STATIC_URL }homepage/media/favicon.ico">
@@ -31,6 +32,15 @@
   
     <header>
         Colonial Heritage Foundation
+
+        <div class="pull-right">
+            %if request.user.is_authenticated():
+                Welcome
+            %else:
+                <button id="show_login_dialogue" class="btn btn-primary">Login here</button>
+            %endif
+        </div>
+
     </header>
 
     <!-- This will be be the main nav bar that lies right under the main header -->
