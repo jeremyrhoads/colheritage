@@ -54,7 +54,7 @@ def login_form(request):
         if form.is_valid():
             user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
             login(request, user)
-            return HttpResponseRedirect('/account/index')
+            return HttpResponseRedirect('/account/myaccount')
 
     # store the form in the parameters
     params['form'] = form
