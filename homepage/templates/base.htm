@@ -75,37 +75,37 @@
             %if request.user.is_authenticated():
                 <h5>Welcome, ${ request.user.get_full_name() }</h5>
             %else:
-                <button id="show_login_dialogue" class="btn btn-primary">Login here</button>
+                <button id="show_login_dialogue" class="btn btn-primary btn-lg">Login here</button>
             %endif
             </div>
 
         </div>
 
-    <div class="container">
+        <div class="container">
 
-        <!-- Left Column -->
-        <nav class="col-md-2">
-            <%block name="navigation">
-                <ul class="nav nav-pills nav-stacked">
-                    <li role="button"><a href="/homepage/index">About</a></li>
-                    <li role="button"><a href="#">Contact</a></li>
-                    <li role="button"><a href="/homepage/terms">Terms</a></li>
-                </ul>
-            </%block>
-        </nav>
+            <!-- Left Column -->
+            <nav class="col-md-2">
+                <%block name="navigation">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li role="button"><a href="/homepage/index">About</a></li>
+                        <li role="button"><a href="#">Contact</a></li>
+                        <li role="button"><a href="/homepage/terms">Terms</a></li>
+                    </ul>
+                </%block>
+            </nav>
 
-        <!-- Center Column -->
-        <div class="col-md-10">
-            <%block name="content">
-            Site content goes here in sub-templates.
-            </%block>
+            <!-- Center Column -->
+            <div class="col-md-10">
+                <%block name="content">
+                Site content goes here in sub-templates.
+                </%block>
+            </div>
+
         </div>
 
-    </div>
-
-    <footer class="panel-footer">
-        Some footer links
-    </footer>
+        <footer class="panel-footer">
+            Some footer links
+        </footer>
   
     ## render the JS with the same name as this page
     ${ static_renderer.get_template_js(request, context)  }
