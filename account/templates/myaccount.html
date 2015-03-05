@@ -1,0 +1,19 @@
+<%inherit file="/homepage/templates/base.htm" />
+
+<%block name="content">
+    <div class="content">
+        %if request.user.is_authenticated():
+
+        <h4>This will be the landing page for when the user logs in successfully</h4>
+
+
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="/account/logout/">Log Out</a></li>
+        </ul>
+
+        %else:
+        <h4>You're not logged in</h4>
+
+        %endif
+    </div>
+</%block>
