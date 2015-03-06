@@ -105,7 +105,21 @@ for data in[
 
 
 # create items
+for data in[
+    ['Battle musket', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 12, 15.00],
+    ['Colonial robe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 50, 55.00],
+    ['Pocket watch', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 35, 45.00],
+    ['Replica telescope', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 72, 175.00],
+    ['Teacup set', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 20, 25.00],
+]:
+    item = hmod.Item()
 
+    item.name = data[0]
+    item.description = data[0]
+    item.value = data[0]
+    item.standard_rental_price = data[0]
+    # item.owner = hmod.User.objects.get(id=1)
+    item.save()
 
 # create products
 
