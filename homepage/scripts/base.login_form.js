@@ -5,7 +5,8 @@ $(function() {
 
     //ajax
     $('#login_form').ajaxForm(function(data){
-
+        console.log(data);
+        console.log($('#jquery-loadmodal-js'));
         $('#jquery-loadmodal-js').html(data);
 
     });//ajaxForm
