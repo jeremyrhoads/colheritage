@@ -10,11 +10,12 @@ $(function() {
         var qyt; //this will pull the .val() from a text field in the form
 
 
-        //$.loadmodal({
+        $.loadmodal({
         //    url: '/catalogue/shopping_cart.add',
-        //    title: 'Shopping Cart',
-        //    width: '700px',
-        //});
+            url: '/catalogue/shopping_cart.add',
+            title: 'Shopping Cart',
+            width: '700px',
+        });
 
     });//show modal
 

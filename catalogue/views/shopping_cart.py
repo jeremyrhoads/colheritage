@@ -29,4 +29,6 @@ def add(request):
 
     # get the items in the shopping cart in an ajax ($.loadmodal) dialog
 
+
+
     return templater.render_to_response(request, 'shopping_cart.html', params)
