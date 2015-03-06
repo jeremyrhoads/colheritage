@@ -44,6 +44,10 @@
             <%block name="mainnav">
                 <ul class="navbar">
                     <li><a href="/homepage/index/">Home</a></li>
+                    <li><a href="/catalogue/index/">Store</a></li>
+
+                %if request.user.is_authenticated():
+                    %if request.user.is_staff:
                     <li><a href="#">Events</a>
                         <ul>
                             <li><a href="/homepage/events/">Events</a></li>
@@ -57,16 +61,16 @@
                             <li><a href="/homepage/products/">Products</a></li>
                         </ul>
                     </li>
-
-                    %if request.user.is_authenticated():
                     <li><a href="/homepage/users/">Users</a></li>
+                    %endif
+
                     <li><a href="#">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                         <ul>
                            <li><a href="/account/myaccount/">My Account</a></li>
                            <li><a href="/homepage/logout/">Log Out</a></li>
                         </ul>
                     </li>
-                    %endif
+                %endif
 
                 </ul>
             </%block>
