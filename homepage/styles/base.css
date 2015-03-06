@@ -1,6 +1,10 @@
-html, body {
-    margin: 0;
-    padding: 0;
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
 
 header {
