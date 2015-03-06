@@ -1,0 +1,19 @@
+<%inherit file="base.htm" />
+<%inherit file="base_events.html" />
+
+<%block name="content">
+    <div class="content">
+        <h3>Edit Event</h3>
+
+        <form method="POST">
+            <table>
+                ${ form }
+            </table>
+
+            </br>
+            <button class="btn btn-success" type="submit">Save</button>
+            <a href="/homepage/events.delete/${event.id}" class="btn btn-danger btn">Delete</a>
+        </form>
+
+    </div>
+</%block>

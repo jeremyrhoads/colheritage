@@ -1,0 +1,36 @@
+<%inherit file="base.htm" />
+<%inherit file="base_inventory.html" />
+
+
+<%block name="content">
+    <div class="content">
+        <h4>Product Management</h4>
+
+        <table id="users-table" class="table table-striped table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Current Price ($)</th>
+                <th>Owner</th>
+                <th><a href="/homepage/products.create" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Product</a></th>
+            </tr>
+
+        %for product in products:
+            <tr>
+                <td>${product.id}</td>
+                <td>${product.name}</td>
+                <td>${product.description}</td>
+                <td>${product.category}</td>
+                <td>${product.current_price}</td>
+                <td>${product.owner}</td>
+                <td>
+                    <a href="/homepage/products.edit/${product.id}" class="btn btn-primary btn-sm">Edit</a>
+                </td>
+            </tr>
+        %endfor
+
+        </table>
+    </div>
+</%block>

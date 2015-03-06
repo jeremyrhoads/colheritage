@@ -1,0 +1,22 @@
+<%inherit file="/homepage/templates/base.htm" />
+
+<%block name="content">
+    <div class="content">
+        <h3>Welcome to the CHF Item Catalogue</h3>
+
+        %for item in catalogue_items:
+        <div class="item_container">
+            <a class="item-link" href="#">
+                <img class="item-pic" src="${ STATIC_URL }catalogue/media/item_images/musket.jpg"/>
+                ${ item.name }
+            </a>
+            <div>
+                <button data-itemid="${ item.id }" class="add-button btn-warning btn-sm">
+                    Add to cart  <span class="glyphicon glyphicon-shopping-cart"></span>
+                </button>
+            </div>
+        </div>
+        %endfor
+
+    </div>
+</%block>
