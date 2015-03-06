@@ -3,6 +3,15 @@
  */
 $(function() {
 
+    ////modal
+    //$('#show_login_dialogue').on('click', function(){
+    //
+    //    $.loadmodal({
+    //        //url: '/account/login.login_form',
+    //    }); //loadmodal
+    //
+    //});//show modal
+
     //ajax
     $('#login_form').ajaxForm(function(data){
 
