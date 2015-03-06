@@ -6,8 +6,7 @@ $(function() {
     //ajax
     $('#login_form').ajaxForm(function(data){
 
-        //console.log('#login_form_container');
-        $('#login_form_container').html(data);
+        $('#jquery-loadmodal-js').html(data);
 
     });//ajaxForm
 

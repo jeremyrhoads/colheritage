@@ -25,16 +25,16 @@ def process_request(request):
         if form.is_valid():
             user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
             login(request, user)
-            return HttpResponseRedirect('/account/myaccount')
+            return HttpResponse("/account/myaccount")
 
     # store the form in the parameters
     params['form'] = form
 
-    return templater.render_to_response(request, 'login.html', params)
+    return templater.render_to_response(request, 'index.html', params)
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(required=True, min_length=1, max_length=100, label="Username", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'joe2929'}))
+    username = forms.CharField(required=True, min_length=1, max_length=100, label="Username", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'john.doe19'}))
     password = forms.CharField(required=True, min_length=1, max_length=100, label="Password", widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     def clean(self):
@@ -56,11 +56,13 @@ def login_form(request):
             login(request, user)
             return HttpResponse('''
             <script>
-            window.location.href = /account/myaccount;
+            window.location.href = window.location.href;
             </script>
             ''')
 
     # store the form in the parameters
     params['form'] = form
 
-    return templater.render_to_response(request, 'login.login_form.html', params)
+    return templater.render_to_response(request, 'index.login_form.html', params)
+
+

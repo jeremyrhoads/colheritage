@@ -6,7 +6,7 @@ $(function() {
     //modal
     $('#show_login_dialogue').on('click', function(){
 
-        $.loadmodal('/account/login.login_form')
+        $.loadmodal('/account/index.login_form')
 
     });//show modal
 
