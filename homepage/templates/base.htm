@@ -61,7 +61,9 @@
                             <li><a href="/homepage/products/">Products</a></li>
                         </ul>
                     </li>
+                        %if request.user.is_superuser:
                     <li><a href="/homepage/users/">Users</a></li>
+                        %endif
                     %endif
 
                     <li><a href="#">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
@@ -79,7 +81,7 @@
             %if request.user.is_authenticated():
                 <h5>Welcome, ${ request.user.get_full_name() }</h5>
             %else:
-                <button id="show_login_dialogue" class="btn btn-primary btn-lg">Login here</button>
+                <button id="show_login_dialogue" class="btn btn-default btn-sm">Login</button>
             %endif
             </div>
 
