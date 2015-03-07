@@ -6,7 +6,7 @@
 
         %for item in catalogue_items:
         <div class="item_container">
-            <a class="item-link" href="#">
+            <a class="item-link" href="/catalogue/item-details/${ item.id }">
                 <img class="item-pic" src="${ STATIC_URL }catalogue/media/item_images/${ item.id }.jpg"/>
                 <div>
                     ${ item.name }

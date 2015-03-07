@@ -1,0 +1,15 @@
+.item-header {
+
+    border-bottom: thin solid #eaeaea;
+}
+
+.main-pic {
+    margin: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+p {
+    padding: 10px;
+    border-top: thin solid #eaeaea;
+    border-bottom: thin solid #eaeaea;
+}
