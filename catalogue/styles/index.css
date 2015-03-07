@@ -1,3 +1,8 @@
+.search-bar {
+    border: thin solid #000000;
+
+}
+
 .item_container{
     display: inline-block;
     border-radius: 5px;

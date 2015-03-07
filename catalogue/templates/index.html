@@ -4,6 +4,17 @@
     <div class="content">
         <h3>Welcome to the CHF Item Catalogue</h3>
 
+        <div class="row search-bar">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for items...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+
         %for item in catalogue_items:
         <div class="item_container">
             <a class="item-link" href="/catalogue/item-details/${ item.id }">
