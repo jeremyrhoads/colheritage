@@ -7,8 +7,10 @@
         %for item in catalogue_items:
         <div class="item_container">
             <a class="item-link" href="#">
-                <img class="item-pic" src="${ STATIC_URL }catalogue/media/item_images/musket.jpg"/>
-                ${ item.name }
+                <img class="item-pic" src="${ STATIC_URL }catalogue/media/item_images/${ item.id }.jpg"/>
+                <div>
+                    ${ item.name }
+                </div>
             </a>
             <div>
                 <button data-itemid="${ item.id }" class="add-button btn-warning btn-sm">
