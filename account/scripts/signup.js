@@ -3,7 +3,7 @@
  */
 $(document).ready(function() {
 
-    /*alert('hey');*/
+    alert('hey');
 
     $('#id_username').on('change', function(){
 
@@ -19,15 +19,31 @@ $(document).ready(function() {
             type: 'POST',
             success: function(resp){
 		   		if (resp = '1'){
-					$('#username_message').text('username is available');
+                    console.log(username);
+					$('#username_message').text('Nice choice. This username is available');
 				}else{
-				    $('#username_message').text('username is taken');
+				    $('#username_message').text('Sorry, this username is taken');
 				}
 		   }//success
         }); //ajax
 
 
+
     }); //change
+
+    $('#c-pwd').on('change', function() {
+
+        var cpwd = $(this).val();
+        var pwd = $('#pwd').val();
+
+        if (cpwd != pwd){
+            //console.log('no match');
+            $('#pwd_message').text('Make sure this password matches the first one you entered');
+        }else{
+            $('#pwd_message').text('');
+            console.log('match');
+        }
+    });
 
     /*console.log('world');*/
 

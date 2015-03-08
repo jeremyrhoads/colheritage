@@ -82,6 +82,7 @@
                 <h5>Welcome, ${ request.user.get_full_name() }</h5>
             %else:
                 <button id="show_login_dialogue" class="btn btn-default btn-sm">Login</button>
+                <a role="button" class="btn btn-success btn-sm" href="/account/signup">Sign Up</a>
             %endif
             </div>
 
