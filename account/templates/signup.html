@@ -5,11 +5,26 @@
 
         <h2>Become a member of this wonderful organization</h2>
 
-        <form method="post">
-            <input id="id_username" name="username" placeholder="pick a username"> <span id="username_message"></span>
-            <br>
-            <br>
+        <form role="form" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input id="id_username" type="text" class="form-control" placeholder="Enter username"> <span id="username_message"></span>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <label for="c-pwd">Confirm Password:</label>
+                <input type="password" class="form-control" id="c-pwd" placeholder="Confirm password"> <span id="pwd_message"></span>
+            </div>
+
             <button class="btn btn-success" type="submit">Sign up</button>
+            <a role="button" class="btn btn-default" href="/homepage/index">Cancel</a>
         </form>
     </div>
 </%block>
