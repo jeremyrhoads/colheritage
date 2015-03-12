@@ -19,10 +19,16 @@ $(document).ready(function() {
             type: 'POST',
             success: function(resp){
 		   		if (resp = '1'){
-                    console.log(username);
-					$('#username_message').text('Nice choice. This username is available');
+                    //console.log(username);
+                    $('#username_message').attr({
+                        "class": "alert alert-success",
+                        "role": "alert"
+                    }).text('Nice choice. This username is available');
 				}else{
-				    $('#username_message').text('Sorry, this username is taken');
+				    $('#username_message').attr({
+                        "class": "alert alert-danger",
+                        "role": "alert"
+                    }).text('Sorry, this username is taken');
 				}
 		   }//success
         }); //ajax
