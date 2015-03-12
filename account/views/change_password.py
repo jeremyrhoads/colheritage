@@ -40,10 +40,11 @@ def process_request(request):
 
 
 class passwordForm(forms.Form):
-    password = forms.CharField(required=True, min_length=1, max_length=100, label="Password", widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-    password2 = forms.CharField(required=True, min_length=1, max_length=100, label="Confirm Password", widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password = forms.CharField(required=True, min_length=1, max_length=100, label="Password",
+                               widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': "pwd"}))
+    password2 = forms.CharField(required=True, min_length=1, max_length=100, label="Confirm Password",
+                                widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': "c-pwd"}))
 
-    '''validate username field'''
     def clean_password(self):
 
         if self.cleaned_data['password'] != self.cleaned_data['password2']:
