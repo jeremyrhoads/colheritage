@@ -3,7 +3,7 @@
  */
 $(document).ready(function() {
 
-    alert('hey');
+    //alert('hey');
 
     $('#id_username').on('change', function(){
 
@@ -37,19 +37,6 @@ $(document).ready(function() {
 
     }); //change
 
-    $('#c-pwd').on('change', function() {
-
-        var cpwd = $(this).val();
-        var pwd = $('#pwd').val();
-
-        if (cpwd != pwd){
-            //console.log('no match');
-            $('#pwd_message').text('Make sure this password matches the first one you entered');
-        }else{
-            $('#pwd_message').text('');
-            console.log('match');
-        }
-    });
 
     /*console.log('world');*/
 
