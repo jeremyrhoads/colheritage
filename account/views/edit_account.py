@@ -19,8 +19,6 @@ templater = get_renderer('account')
 def process_request(request):
     if not request.user.is_authenticated():
         return redirect('/homepage/login/?next=%s' % request.path)
-    if not request.user.is_staff:
-        return HttpResponseRedirect('/homepage/authentication')
 
     params = {}
 

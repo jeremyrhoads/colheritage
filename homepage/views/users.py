@@ -58,7 +58,7 @@ def edit(request):
         'state': user.state,
         'zip': user.zip,
         'country': user.country,
-        'phone': user.phone,
+        'telephone': user.telephone,
 
         'date_joined': user.date_joined,
         'last_login': user.last_login,
@@ -82,7 +82,7 @@ def edit(request):
             user.state = form.cleaned_data['state']
             user.zip = form.cleaned_data['zip']
             user.country = form.cleaned_data['country']
-            user.phone = form.cleaned_data['phone']
+            user.telephone = form.cleaned_data['telephone']
             user.date_joined = form.cleaned_data['date_joined']
             user.last_login = form.cleaned_data['last_login']
             user.username = form.cleaned_data['username']
@@ -107,7 +107,7 @@ class UserEditForm(forms.Form):
     state = forms.CharField(max_length=2)
     zip = forms.IntegerField()
     country = forms.CharField(max_length=30)
-    phone = forms.CharField(max_length=12)
+    telephone = forms.CharField(max_length=12)
 
     date_joined = forms.DateField()
     last_login = forms.DateTimeField()
@@ -159,7 +159,7 @@ def create(request):
     user.state = ''
     user.zip = 12345
     user.country = ''
-    user.phone = 12345
+    user.telephone = 12345
     user.image = ''
     user.security_question = ''
 
