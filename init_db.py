@@ -121,5 +121,4 @@ for data in[
     # item.owner = hmod.User.objects.get(id=1)
     item.save()
 
-# create products
 
