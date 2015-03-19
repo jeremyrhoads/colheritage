@@ -10,6 +10,9 @@ django.setup()
 
 # regular imports
 from django.contrib.auth import models as conmod
+from django.db import connection
+import subprocess
+import sys
 import homepage.models as hmod
 import datetime
 
@@ -17,7 +20,11 @@ from django.contrib.auth.models import Group, Permission, ContentType
 
 
 # drop the tables
+cursor = connection.cursor()
+cursor.execute("DROP SCHEMA PUBLIC CASCADE")
+cursor.execute("CREATE SCHEMA PUBLIC")
 
+subprocess.call([sys.executable, "manage.py", "migrate"])
 
 # create users with groups and permissions
 for data in[
@@ -152,4 +159,5 @@ for data in[
     # item.owner = hmod.User.objects.get(id=1)
     item.save()
 
-
+# run the server automatically
+subprocess.call([sys.executable, "manage.py", "runserver"])
