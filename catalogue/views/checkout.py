@@ -18,8 +18,8 @@ templater = get_renderer('catalogue')
 @view_function
 def process_request(request):
 
-    if not request.user.is_authenticated():
-        return redirect('/account/index/?next=%s' % request.path)
+    # if not request.user.is_authenticated():
+        # return redirect('/account/index/?next=%s' % request.path)
 
     params = {}
 
@@ -31,13 +31,14 @@ def process_request(request):
         form = checkoutForm(request.POST)
         form.userid = user.id
         if form.is_valid():
-            user.save();
+            user.save()
             return HttpResponseRedirect('/catalogue/checkout/${ user.id }')
 
     # add params
     params['form'] = form
     params['user'] = user
     return templater.render_to_response(request, 'checkout.html', params)
+
 
 class checkoutForm(forms.Form):
     first_name = forms.CharField(required=True, max_length=100)
