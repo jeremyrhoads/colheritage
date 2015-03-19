@@ -17,8 +17,8 @@ templater = get_renderer('account')
 
 @view_function
 def process_request(request):
-    if not request.user.is_authenticated():
-        return redirect('/homepage/login/?next=%s' % request.path)
+    # if not request.user.is_authenticated():
+    #    return redirect('/homepage/login/?next=%s' % request.path)
 
     params = {}
 
@@ -32,7 +32,7 @@ def process_request(request):
         if form.is_valid():
             user.set_password(form.cleaned_data['password2'])
             user.save()
-            return HttpResponseRedirect("/account/change_password/${ user.id }")
+            return HttpResponseRedirect("/account/myaccount/${ user.id }")
 
     params['form'] = form
     params['user'] = user
@@ -40,12 +40,12 @@ def process_request(request):
 
 
 class passwordForm(forms.Form):
-    password = forms.CharField(required=True, min_length=1, max_length=100, label="Password",
+    password = forms.CharField(required=True, min_length=1, max_length=100, label="New Password",
                                widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': "pwd"}))
     password2 = forms.CharField(required=True, min_length=1, max_length=100, label="Confirm Password",
                                 widget=forms.PasswordInput(attrs={'class': 'form-control', 'id': "c-pwd"}))
 
-    def clean_password(self):
+    def clean(self):
 
         if self.cleaned_data['password'] != self.cleaned_data['password2']:
             raise forms.ValidationError('Make sure your passwords match')
