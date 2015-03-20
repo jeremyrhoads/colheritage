@@ -1,14 +1,102 @@
 <%block name="content">
     <div class="content">
 
+        <!--
         <form>
             <table>
-
+                add the form from the .py file here
             </table>
-
-            <a role="button" class="btn btn-warning btn-xs" href="/catalogue/checkout">
-                Checkout <span class="glyphicon glyphicon-credit-card"></span>
-            </a>
         </form>
+        -->
+
+        <div class="cart-headers">
+            <h3 class="c-header">Purchases</h3>
+        </div>
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td class="img-col">
+                    <div class="cart-images">
+                        <img class="c-img" src="${ STATIC_URL }catalogue/media/item_images/1.jpg"/>
+                    </div>
+                </td>
+                <td>
+                    <span class="product_name">Teacup set</span>
+                </td>
+                <td>
+                    <span class="quantity">1</span>
+                </td>
+                <td>
+                    <span class="price">$ 25.00</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="img-col">
+                    <div class="cart-images">
+                        <img class="c-img" src="${ STATIC_URL }catalogue/media/item_images/2.jpg"/>
+                    </div>
+                </td>
+                <td>
+                    <span class="product_name">Battle Musket</span>
+                </td>
+                <td>
+                    <span class="quantity">1</span>
+                </td>
+                <td>
+                    <span class="price">$ 12.00</span>
+                </td>
+            </tr>
+        </table>
+        <div class="pull-right cart-totals">
+            <strong>Purchase Subtotal:</strong> $ 37.00
+        </div>
+        <hr>
+        <div class="cart-headers">
+            <h3 class="c-header">Rentals</h3>
+        </div>
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>Item Name</th>
+                <th>Return Date</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td class="img-col">
+                    <div class="cart-images">
+                        <img class="c-img" src="${ STATIC_URL }catalogue/media/item_images/4.jpg"/>
+                    </div>
+                </td>
+                <td>
+                    <span class="product_name">Colonial Robe</span>
+                </td>
+                <td>
+                    June 26, 2015 (14 days)
+                </td>
+                <td>
+                    <span class="quantity">1</span>
+                </td>
+                <td>
+                    <span class="price">$ 175.00</span>
+                </td>
+            </tr>
+        </table>
+        <div class="cart-totals">
+            <strong>Rental Subtotal:</strong> $ 175.00
+        </div>
+        <hr>
+        <div class="cart-totals">
+            <strong>Total:</strong> $ 212.00
+        </div>
+        <hr>
+        <a role="button" class="btn btn-warning btn-sm checkout-btn" href="/catalogue/checkout">
+            Checkout <span class="glyphicon glyphicon-credit-card"></span>
+        </a>
     </div>
 </%block>

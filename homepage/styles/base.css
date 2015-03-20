@@ -632,3 +632,38 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
   width: 40%;
   padding-top: 5px;
 }
+
+
+
+/********* shopping cart *********/
+.cart-headers {
+    background: none repeat scroll 0 0 #eee;
+    border: thin solid #eee;
+    width: 100%;
+}
+
+.c-header {
+    text-align: center;
+}
+
+.img-col {
+    width: 100px;
+}
+
+.cart-images {
+    width: 75%;
+}
+
+.c-img {
+    width: 100%;
+}
+
+.cart-totals {
+    float: right;
+}
+
+.checkout-btn {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
