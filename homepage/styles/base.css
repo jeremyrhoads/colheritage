@@ -107,6 +107,14 @@ header {
 
 
 /********* container styles *********/
+.login-form {
+    margin: 10px;
+}
+
+
+
+
+/********* container styles *********/
 
 .col-md-2 {
     margin: 20px 0;
@@ -363,7 +371,7 @@ form.go-right input:focus + label.same{
   width:50%;
   float:left;
 }
-#accordian #payment label{
+#accordian #payment .card-label{
   display:inline-block;
 }
 #accordian #payment .expiry{
@@ -573,14 +581,14 @@ form.go-right input:focus + label.same{
 }
 
 
-form > div {
+.card-form > div {
   position: relative;
   overflow: hidden;
   width:100%;
   max-width:320px;
 
 }
-form input, form textarea {
+.card-form input, form textarea {
   width: 100%;
   max-width:320px;
   border: 2px solid gray;
@@ -592,13 +600,13 @@ form input, form textarea {
   padding: 8px 12px;
   outline: 0;
 }
-form input:valid, form textarea:valid {
+.card-form input:valid, .card-form textarea:valid {
   background: white;
 }
-form input:focus, form textarea:focus {
+.card-form input:focus, .card-form textarea:focus {
   border-color: #f06d06;
 }
-form input:focus + label, form textarea:focus + label {
+.card-form input:focus + .card-label, .card-form textarea:focus + .card-label {
   background:#80c0ff;
   color: white;
   font-size: 70%;
@@ -606,18 +614,18 @@ form input:focus + label, form textarea:focus + label {
   z-index: 2;
   text-transform: uppercase;
 }
-form label {
+.card-form .card-label {
   /*transition: background 0.9s, color 0.4s, top 0.4s, bottom 0.4s, right 0.4s, left 0.4s;*/
   position: absolute;
   color: #999;
   padding: 7px 6px;
 }
-form textarea {
+.card-form textarea {
   display: block;
   resize: vertical;
 }
 
-form.go-right label {
+form.go-right .card-label {
   top: 2px;
   right: 100%;
   width: 100%;
@@ -626,7 +634,7 @@ form.go-right label {
   border-bottom-right-radius:3px;
   border-top-right-radius:3px;
 }
-form.go-right input:focus + label, form.go-right textarea:focus + label {
+form.go-right input:focus + .card-label, form.go-right textarea:focus + .card-label {
   right: 0;
   margin-right: 0;
   width: 40%;

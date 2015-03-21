@@ -5,12 +5,16 @@
 <%block name="navigation"></%block>
 
 <%block name="content">
+    <div class="content">
         <form id="login_form" method="post" action="/account/index.login_form/">
             <table>
                 ${ form }
             </table>
             <br/>
+            <a href="/account/forgot_password">Forgot my password</a>
+            <br/>
+            <hr>
             <button class="btn btn-warning" type="submit">Login</button>
         </form>
-
+    </div>
 </%block>

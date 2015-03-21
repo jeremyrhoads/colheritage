@@ -34,8 +34,10 @@ def process_request(request):
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField(required=True, min_length=1, max_length=100, label="Username", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'john.doe19'}))
-    password = forms.CharField(required=True, min_length=1, max_length=100, label="Password", widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    username = forms.CharField(required=True, min_length=1, max_length=100, label="Username", widget=forms.TextInput(
+        attrs={'class': 'form-control login-form', 'placeholder': 'john.doe19'}))
+    password = forms.CharField(required=True, min_length=1, max_length=100, label="Password", widget=forms.PasswordInput(
+        attrs={'class': 'form-control login-form'}))
 
     def clean(self):
         user = authenticate(username=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
