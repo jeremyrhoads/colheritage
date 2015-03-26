@@ -5,31 +5,40 @@
         <h3>Welcome to the CHF Item Catalogue</h3>
 
         <div class="row search-bar">
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for items...">
+                    <input type="text" class="form-control" id="filter" placeholder="Search for items...">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">Go!</button>
                     </span>
                 </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
+            </div><!-- /.col-lg- -->
+            <div class="col-lg-4">
+                <span id="filter-count"></span>
+            </div>
         </div><!-- /.row -->
 
-        %for item in catalogue_items:
-        <div class="item_container">
-            <a class="item-link" href="/catalogue/item-details/${ item.id }">
-                <img class="item-pic" src="${ STATIC_URL }catalogue/media/item_images/${ item.id }.jpg"/>
-                <div>
-                    ${ item.name }
-                </div>
-            </a>
-            <div>
-                <button data-itemid="${ item.id }" class="add-button btn-warning btn-sm">
-                    Add to cart  <span class="glyphicon glyphicon-shopping-cart"></span>
-                </button>
-            </div>
-        </div>
-        %endfor
+        <div class="row">
+            %for i in catalogue_items:
+
+            <!-- Display a thumbnail for each product-->
+
+            <div class="col-sm-4">
+                <div class="thumbnail thumbnail-item" id="thumbnail">
+                    <img src="${ STATIC_URL }catalogue/media/item_images/${ i.id }.jpg" alt="Image not available" class="item-pic"/>
+                    <div class="caption" style="text-align:center;">
+                        <h3 class="name">${ i.name }</h3>
+                        <p>Price: $ ${ i.value } </p>
+                        <p><a href="/catalogue/item-details/${ i.id }" class="btn btn-sm btn-primary" role="button">View Details</a>
+                        <a data-id="${ i.id }" class="btn btn-sm btn-warning add-button">Add to Cart</a>
+
+
+                    </div> <!-- caption -->
+                </div> <!--thumbnail -->
+            </div><!--col-->
+
+            %endfor
+        </div> <!--row-->
 
     </div>
 </%block>

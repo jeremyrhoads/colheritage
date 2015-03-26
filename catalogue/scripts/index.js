@@ -19,12 +19,30 @@ $(function() {
 
     });//show modal
 
-    ////ajax
-    //$('#login_form').ajaxForm(function(data){
-    //
-    //    //console.log('#login_form_container');
-    //    $('#login_form_container').html(data);
-    //
-    //});//ajaxForm
+    //the search filter for the products
+    $("#filter").keyup(function(){
+
+            // Retrieve the input field text and reset the count to zero
+            var filter = $(this).val(), count = 0;
+
+            // Loop through the products
+            $(".thumbnail").each(function(){
+                var nameelem = $(this).find('.name');
+                var descelem = $(this).find('.description');
+                // If the list item does not contain the text phrase fade it out
+                if (nameelem.text().search(new RegExp(filter, "i")) < 0 && descelem.text().search(new RegExp(filter, "i")) < 0) {
+                    $(this).fadeOut();
+                } else {
+                    $(this).show();
+                    count++;
+                } //else
+
+            // Update the count
+            var numberItems = count;
+            $("#filter-count").text("Search results : "+count);
+
+        });//thumbnail loop
+
+    }); //keyup
 
 });//ready
