@@ -144,11 +144,11 @@ for data in [
 
 # create items
 for data in[
-    ['Battle musket', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 12, 15.00],
-    ['Colonial robe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 50, 55.00],
-    ['Pocket watch', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 35, 45.00],
-    ['Replica telescope', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 72, 175.00],
-    ['Teacup set', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 20, 25.00],
+    ['Royal Wig', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 20, 15.00],
+    ['Colonial robe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 60, 55.00],
+    ['Stockings', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 55, 45.00],
+    ['Battle Coat', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 172, 75.00],
+    ['Cape', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 40, 25.00],
 ]:
     item = hmod.Item()
 
@@ -159,5 +159,23 @@ for data in[
     # item.owner = hmod.User.objects.get(id=1)
     item.save()
 
+
+# create products
+for data in[
+    ['Battle musket', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', "Battle Gear", 45.00],
+    ['Musket bullets', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', "Battle Gear", 5.00],
+    ['Pocket watch', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', "Accessories", 45.00],
+    ['Replica telescope', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', "Collector's Item", 175.00],
+    ['Teacup set', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', "Filigree", 25.00],
+]:
+    product = hmod.Product()
+
+    product.name = data[0]
+    product.description = data[1]
+    product.category = data[2]
+    product.current_price = data[3]
+    # product.owner = hmod.User.objects.get(id=1)
+    product.save()
+
 # run the server automatically
-subprocess.call([sys.executable, "manage.py", "runserver"])
+# subprocess.call([sys.executable, "manage.py", "runserver"])

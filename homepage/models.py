@@ -73,7 +73,7 @@ class Product(models.Model):
     description = models.TextField(max_length=50)
     category = models.TextField(max_length=15)
     current_price = models.FloatField()
-    owner = models.ForeignKey('User')
+    owner = models.ForeignKey('User', null=True, blank=True)
 
 
 class Product_Picture(models.Model):
