@@ -1,15 +1,21 @@
 <%inherit file="/homepage/templates/base.htm" />
 
+<%block name="navigation">
+    <ul class="nav nav-pills nav-stacked">
+        <li role="button"><a href="#">Products</a></li>
+    </ul>
+</%block>
+
 <%block name="content">
     <div class="content">
         <div class="page-title-block">
-            <h1 class="page-title">Welcome to the CHF Item Catalogue</h1>
+            <h1 class="page-title">Online CHF Catalogue</h1>
         </div>
 
         <div class="row search-bar">
             <div class="col-lg-8">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="filter" placeholder="Search for items...">
+                    <input type="text" class="form-control" id="filter" placeholder="Search for items to rent...">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="button">Go!</button>
                     </span>
@@ -19,6 +25,8 @@
                 <span id="filter-count"></span>
             </div>
         </div><!-- /.row -->
+
+        <hr>
 
         <div class="row">
             %for i in catalogue_items:
