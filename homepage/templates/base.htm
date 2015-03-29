@@ -7,9 +7,12 @@
 <!DOCTYPE html>
 <html>
     <meta charset="UTF-8">
+    <meta name="description" content="The Colonial Heritage Foundation is a organization dedicated to honoring our
+                            nation's rich history. Based in Orem, Utah, CHF strives awaken a sense of patriotism in
+                            all those who interested in learning more about early American culture.">
     <head>
 
-    <title>homepage</title>
+    <title>Colonial Heritage Foundation</title>
 
     ## add any site-wide scripts or CSS here; for example, jquery:
     <!-- Latest compiled and minified CSS -->
@@ -31,10 +34,9 @@
     <body>
   
         <header>
-        Colonial Heritage Foundation
-
-
-
+            <h1 id="header-title">
+            Colonial Heritage Foundation
+            </h1>
         </header>
 
         <!-- This will be be the main nav bar that lies right under the main header -->
@@ -91,21 +93,25 @@
         <div class="container">
 
             <!-- Left Column -->
-            <nav class="col-md-2">
-                <%block name="navigation">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li role="button"><a href="/homepage/index">About</a></li>
-                        <li role="button"><a href="#">Contact</a></li>
-                        <li role="button"><a href="/homepage/terms">Terms</a></li>
-                    </ul>
-                </%block>
-            </nav>
+            <div class="col-md-2">
+                <nav id="side-nav">
+                    <%block name="navigation">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li role="button"><a href="/homepage/index">About</a></li>
+                            <li role="button"><a href="#">Contact</a></li>
+                            <li role="button"><a href="/homepage/terms">Terms</a></li>
+                        </ul>
+                    </%block>
+                </nav>
+            </div>
 
             <!-- Center Column -->
             <div class="col-md-10">
-                <%block name="content">
-                Site content goes here in sub-templates.
-                </%block>
+                <div id="main-content">
+                    <%block name="content">
+                    Site content goes here in sub-templates.
+                    </%block>
+                </div>
             </div>
 
         </div>
