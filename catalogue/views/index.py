@@ -21,10 +21,13 @@ def process_request(request):
 
     catalogue_items = hmod.Item.objects.all().order_by('name')
 
+    catalogue_products = hmod.Product.objects.all().order_by('name')
+
     print('>>>>>>>>>', request.session)
 
 
     # items = hmod.Item.objects.all().order_by('id')
 
     params['catalogue_items'] = catalogue_items
+    params['catalogue_products'] = catalogue_products
     return templater.render_to_response(request, 'index.html', params)

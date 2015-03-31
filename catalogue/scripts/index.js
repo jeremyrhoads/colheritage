@@ -17,13 +17,34 @@ $(function() {
         if(qty < 1) qty = 1;
 
         $.loadmodal({
-        //    url: '/catalogue/shopping_cart.add',
             url: '/catalogue/shopping_cart.add/' + itemid + '/' + qty + '/rental',
             title: 'Shopping Cart',
             width: '700px',
         });
 
     });//show modal
+
+    //product modal
+    $('.add-button-p ').on('click', function(){
+
+        var pid = $(this).attr('data-pid');
+        var id = "qty_" + pid;
+        var qty = $("#" + id).val(); //this will pull the .val() from a text field in the form
+        console.log(pid)
+        console.log(id)
+        console.log(qty)
+
+        //in case the user leaves qty blank
+        if(qty < 1) qty = 1;
+
+        $.loadmodal({
+            url: '/catalogue/shopping_cart.add/' + pid + '/' + qty + '/product',
+            title: 'Shopping Cart',
+            width: '700px',
+        });
+
+    });//show modal
+
 
     //the search filter for the products
     $("#filter").keyup(function(){

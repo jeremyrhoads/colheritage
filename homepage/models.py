@@ -72,7 +72,7 @@ class Product(models.Model):
     name = models.TextField(max_length=20)
     description = models.TextField(max_length=50)
     category = models.TextField(max_length=15)
-    current_price = models.FloatField()
+    current_price = models.DecimalField(max_digits=5, decimal_places = 2)
     owner = models.ForeignKey('User', null=True, blank=True)
 
 
