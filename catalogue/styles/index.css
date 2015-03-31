@@ -6,3 +6,20 @@
     max-height: 220px;
     max-width: 220px;
 }
+
+.cart-pic {
+    height: 50px;
+}
+
+.cart-headers {
+    text-align: center;
+    height: 30px;
+    background: #000;
+    color: #ddd;
+
+}
+
+.quantity {
+    margin: -20px auto 5px auto;
+    width: 50px;
+}

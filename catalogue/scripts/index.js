@@ -6,13 +6,19 @@ $(function() {
     //modal
     $('.add-button ').on('click', function(){
 
-        var itemid = $(this).attr('data-itemid');
-        var qyt; //this will pull the .val() from a text field in the form
+        var itemid = $(this).attr('data-id');
+        var id = "qty_" + itemid;
+        var qty = $("#" + id).val(); //this will pull the .val() from a text field in the form
+        console.log(itemid)
+        console.log(id)
+        console.log(qty)
 
+        //in case the user leaves qty blank
+        if(qty < 1) qty = 1;
 
         $.loadmodal({
         //    url: '/catalogue/shopping_cart.add',
-            url: '/catalogue/shopping_cart.add',
+            url: '/catalogue/shopping_cart.add/' + itemid + '/' + qty + '/rental',
             title: 'Shopping Cart',
             width: '700px',
         });

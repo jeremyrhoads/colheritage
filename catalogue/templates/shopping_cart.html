@@ -1,14 +1,38 @@
 <%block name="content">
     <div class="content">
 
-        <form>
-            <table>
+        <div class="cart-headers">Rentals</div>
 
-            </table>
+        <table class="table table-striped">
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Qty</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
 
-            <a role="button" class="btn btn-warning btn-xs" href="/catalogue/checkout">
-                Checkout <span class="glyphicon glyphicon-credit-card"></span>
-            </a>
-        </form>
+            %for key in items:
+            <% i = items[key] %>
+            <tr>
+                <td><img class="cart-pic" src="${ STATIC_URL }catalogue/media/item_images/${ i.id }.jpg"></td>
+                <td>${ i.name }</td>
+                <td>${ items_cart[str(i.id)] }</td>
+                <td>${ i.standard_rental_price * items_cart[str(i.id)] }</td>
+                <td nowrap>
+                    <a class="btn btn-danger btn-xs" href="/catalogue/shopping_cart.delete/${ i.id }/rental">Remove</a>
+                </td>
+            </tr>
+            %endfor
+        </table>
+
+        <!-- add duplicate table for products -->
+
+
+        <hr>
+        <a role="button" class="btn btn-warning btn-xs" href="/catalogue/checkout">
+            Checkout <span class="glyphicon glyphicon-credit-card"></span>
+        </a>
+
     </div>
 </%block>

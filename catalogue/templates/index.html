@@ -38,7 +38,9 @@
                     <img src="${ STATIC_URL }catalogue/media/item_images/${ i.id }.jpg" alt="Image not available" class="item-pic"/>
                     <div class="caption" style="text-align:center;">
                         <h3 class="name">${ i.name }</h3>
-                        <p>Price: $ ${ i.value } </p>
+                        <p>Price: $ ${ i.standard_rental_price } </p>
+                        <!-- add qty input here -->
+                        <input id="qty_${ i.id }" class="quantity" type="number" placeholder="qty">
                         <p><a href="/catalogue/item-details/${ i.id }" class="btn btn-sm btn-primary" role="button">View Details</a>
                         <a data-id="${ i.id }" class="btn btn-sm btn-warning add-button">Add to Cart</a>
 
