@@ -4,8 +4,8 @@
 
 <%block name="navigation">
     <ul class="nav nav-pills nav-stacked">
-        <li role="button" class="active"><a>Events</a></li>
-        <li role="button"><a href="/festivals/venues">Venues</a></li>
+        <li role="button"><a href="/festivals/index">Events</a></li>
+        <li role="button" class="active"><a>Venues</a></li>
         <li role="button"><a href="#">Artisan Products</a></li>
     </ul>
 </%block>
@@ -32,19 +32,25 @@
 
         <hr>
 
-        <div>
-            %for e in event_list:
-                <div class="row event-container">
-                    <div class="event-pic col-sm-4">
-                        <img src="${ STATIC_URL }/festivals/media/${ e.id }.jpg" alt="Image Not Available"/>
-                    </div>
-                    <div class="event-desc col-sm-8">
-                        <h3 class="desc-header">${ e.name }</h3>
-                        <p>${ e.description }</p>
-                        <a class="btn btn-sm btn-primary" href="/festivals/event-details/${ e.id }" role="button">View Details</a>
-                    </div>
-                </div>
+        <div class="row">
+            %for v in venue_list:
+
+            <!-- Display a thumbnail for each product-->
+
+            <div class="col-sm-4">
+                <div class="thumbnail thumbnail-item" id="thumbnail">
+                    <img src="${ STATIC_URL }festivals/media/1.jpg" alt="Image not available" class="item-pic"/>
+                    <div class="caption" style="text-align:center;">
+                        <h3 class="name">${ v.name }</h3>
+                        <p>${ v.address }</p>
+                        <p>${ v.city }, ${ v.state }</p>
+                        <p>${ v.zip }</p>
+                    </div> <!-- caption -->
+                </div> <!--thumbnail -->
+            </div><!--col-->
+
             %endfor
-        </div>
+        </div> <!--row-->
+
     </div>
 </%block>
