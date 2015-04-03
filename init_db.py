@@ -116,6 +116,7 @@ for data in [
     ['Pie eating contest', 'See who can eat the most apple pies'],
     ['Storytelling', 'Hear Ben Franklin read his favorite stories to children'],
     ['Marksmen contest', 'See who the best musket shot'],
+    ['Apple bobbing', "Come get a refreshing dip and some of granny's finest apples"],
 ]:
     pub_event = hmod.Public_Event()
     pub_event.name = data[0]
