@@ -136,6 +136,7 @@ class Sale_Item(models.Model):
 
 
 class Event(models.Model):
+    name = models.TextField(max_length=40)
     start_date = models.DateField()
     end_date = models.DateField()
     map_file_name = models.TextField(max_length=30)
