@@ -1,8 +1,42 @@
-<%inherit file="base.htm" />
+<%inherit file="/homepage/templates/base.htm" />
+
+<%block name="title">CHF Festivals || Find a CHF Festival Near You</%block>
 
 <%block name="content">
     <div class="content">
-      <h3>Congratulations -- you've successfully created a new django-mako-plus app!</h3>
-      <h4>Next Up: Go through the django-mako-plus tutorial and add Javascript, CSS, and urlparams to this page.</h4>
+        <div class="page-title-block">
+            <h1 class="page-title">Colonial Heritage Festivals</h1>
+        </div>
+
+        <div class="row search-bar">
+            <div class="col-lg-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="filter" placeholder="Search rentable items or products">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg- -->
+            <div class="col-lg-4">
+                <span id="filter-count"></span>
+            </div>
+        </div><!-- /.row -->
+
+        <hr>
+
+        <div>
+            %for e in event_list:
+                <div class="row event-container">
+                    <div class="event-pic col-sm-4">
+                        <img src="${ STATIC_URL }/festivals/media/${ e.id }.jpg" alt="Image Not Available"/>
+                    </div>
+                    <div class="event-desc col-sm-8">
+                        <h3 class="desc-header">${ e.name }</h3>
+                        <p>${ e.description }</p>
+                        <a class="btn btn-sm btn-primary" href="/festivals/event-details/${ e.id }" role="button">View Details</a>
+                    </div>
+                </div>
+            %endfor
+        </div>
     </div>
 </%block>

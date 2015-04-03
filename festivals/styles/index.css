@@ -1,0 +1,38 @@
+.event-container {
+    border: thin solid #eee;
+    border-radius: 3px;
+    background: #efefef;
+    margin-top: 20px;
+    padding: 10px;
+    height: 170px;
+
+}
+
+.event-pic {
+    display: inline-block;
+    max-width:240px;
+    max-height: 240px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.event-pic > img {
+    border: thin solid #aaa;
+    border-radius: 3px;
+}
+
+.event-desc {
+    display: inline-block;
+    border-left: thin solid #333;
+    padding: 5px auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.desc-header {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+

@@ -1,0 +1,22 @@
+.event-header {
+    background: #0c5aa6;
+    border-bottom: thin solid #eaeaea;
+    color: #eee;
+    padding: 10px;
+}
+
+.event-title  {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.main-pic {
+    margin: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+p {
+    padding: 10px;
+    border-top: thin solid #eaeaea;
+    border-bottom: thin solid #eaeaea;
+}
