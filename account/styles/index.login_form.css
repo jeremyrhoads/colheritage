@@ -1,0 +1,13 @@
+.login {
+    margin-top:10px;
+}
+
+.forgot {
+    text-decoration: none;
+    background: none;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+    background: none;
+}
