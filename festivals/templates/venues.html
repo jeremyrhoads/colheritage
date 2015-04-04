@@ -38,8 +38,8 @@
             <!-- Display a thumbnail for each product-->
 
             <div class="col-sm-4">
-                <div class="thumbnail thumbnail-item" id="thumbnail">
-                    <img src="${ STATIC_URL }festivals/media/1.jpg" alt="Image not available" class="item-pic"/>
+                <div class="thumbnail thumbnail-item v-container" id="thumbnail">
+                    <img src="${ STATIC_URL }festivals/media/venue_images/${ v.id }.jpg" alt="Image not available" class="item-pic"/>
                     <div class="caption" style="text-align:center;">
                         <h3 class="name">${ v.name }</h3>
                         <p>${ v.address }</p>
