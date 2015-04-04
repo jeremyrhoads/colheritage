@@ -53,38 +53,42 @@
 
             <%block name="mainnav">
                 <ul class="navbar">
-                    <li><a href="/homepage/index/">Home</a></li>
-                    <li><a href="/catalogue/index/">Store</a></li>
-                    <li><a href="/festivals/index/">Festivals</a></li>
-
                 %if request.user.is_authenticated():
                     %if request.user.is_staff:
-                    <li><a href="#">Events</a>
+                    <li><a>Events</a>
                         <ul>
                             <li><a href="/homepage/events/">Events</a></li>
                             <li><a href="/homepage/public_events">Public Events</a></li>
                             <li><a href="/homepage/venues/">Venues</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Inventory</a>
+                    <li><a>Inventory</a>
                         <ul>
                             <li><a href="/homepage/items/">Items</a></li>
                             <li><a href="/homepage/products/">Products</a></li>
+                            <li><a href="/homepage/rental_return">Rentals/Returns</a></li>
                         </ul>
                     </li>
                         %if request.user.is_superuser:
                     <li><a href="/homepage/users/">Users</a></li>
                         %endif
+                    %else:
+                    <li><a href="/homepage/index/">Home</a></li>
+                    <li><a href="/catalogue/index/">Store</a></li>
+                    <li><a href="/festivals/index/">Festivals</a></li>
                     %endif
 
-                    <li><a href="#">Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+                    <li><a>Account <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
                         <ul>
                            <li><a href="/account/myaccount/">My Account</a></li>
                            <li><a href="/homepage/logout/">Log Out</a></li>
                         </ul>
                     </li>
+                %else:
+                    <li><a href="/homepage/index/">Home</a></li>
+                    <li><a href="/catalogue/index/">Store</a></li>
+                    <li><a href="/festivals/index/">Festivals</a></li>
                 %endif
-
                 </ul>
             </%block>
 
