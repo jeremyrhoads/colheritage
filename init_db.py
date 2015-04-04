@@ -115,7 +115,7 @@ for data in [
 for data in [
     ['Pie eating contest', 'See who can eat the most apple pies'],
     ['Storytelling', 'Hear Ben Franklin read his favorite stories to children'],
-    ['Marksmen contest', 'See who the best musket shot'],
+    ['Marksmen contest', 'See who has the best musket shot'],
     ['Apple bobbing', "Come get a refreshing dip and some of granny's finest apples"],
 ]:
     pub_event = hmod.Public_Event()
@@ -149,7 +149,7 @@ for data in[
     ['Colonial robe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 60, 55.00],
     ['Stockings', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 55, 45.00],
     ['Battle Coat', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 172, 75.00],
-    ['Cape', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 40, 25.00],
+    ['Boots', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', 40, 25.00],
 ]:
     item = hmod.Item()
 
