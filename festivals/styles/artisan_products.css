@@ -1,0 +1,39 @@
+.search-bar {
+    margin: 10px 0;
+}
+
+.name{
+    margin-top: 5px;
+}
+
+.item-pic {
+    max-height: 220px;
+    max-width: 220px;
+}
+
+.cart-pic {
+    height: 50px;
+}
+
+.cart-headers {
+    text-align: center;
+    height: 30px;
+    background: #222;
+    color: #ddd;
+}
+
+.quantity {
+    margin: -20px auto 10px auto;
+    width: 50px;
+}
+
+.page-jumps {
+    text-decoration: none;
+    color: #000;
+}
+
+.page-jumps:hover {
+    text-decoration: none;
+    background: none;
+    color: #000;
+}
