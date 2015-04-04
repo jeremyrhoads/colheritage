@@ -41,7 +41,7 @@
             %for key in products:
              <% p = products[key] %>
             <tr>
-                <td><img class="cart-pic" src="${ STATIC_URL }catalogue/media/item_images/${ p.id }.jpg"></td>
+                <td><img class="cart-pic" src="${ STATIC_URL }catalogue/media/prod_images/${ p.id }.jpg"></td>
                 <td>${ p.name }</td>
                 <td>${ products_cart[str(p.id)] }</td>
                 <td>${ p.current_price * products_cart[str(p.id)] }</td>
