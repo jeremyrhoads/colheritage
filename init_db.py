@@ -163,11 +163,13 @@ for data in[
 # create rentals
 # these are the date variables
 today = datetime.datetime.now()
-thirty = today - datetime.timedelta(days=31)
-sixty = today - datetime.timedelta(days=61)
+thirty = today - datetime.timedelta(days=30)
+sixty = today - datetime.timedelta(days=60)
 ninety = today - datetime.timedelta(days=91)
 
 for data in[
+    [today, thirty, 0.0],
+    [today, thirty, 0.0],
     [today, thirty, 0.0],
     [today, thirty, 0.0],
     [today, sixty, 0.0],
