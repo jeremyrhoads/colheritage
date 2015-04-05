@@ -1,0 +1,26 @@
+body {
+    background: #00337a;
+}
+.batch-container {
+    background: #fff;
+    border-radius: 2px;
+    width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.r-tables {
+    margin-top: 20px;
+}
+
+.e-button {
+    border-top: thin solid #efefef;
+    height: 60px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.e-button > button {
+    margin-left: 440px;
+    margin-right: auto;
+}
