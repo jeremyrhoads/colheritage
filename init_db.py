@@ -14,7 +14,7 @@ from django.db import connection
 import subprocess
 import sys
 import homepage.models as hmod
-import datetime
+import datetime, time
 
 from django.contrib.auth.models import Group, Permission, ContentType
 
@@ -159,6 +159,28 @@ for data in[
     item.standard_rental_price = data[3]
     # item.owner = hmod.User.objects.get(id=1)
     item.save()
+
+# create rentals
+# these are the date variables
+today = datetime.datetime.now()
+thirty = today - datetime.timedelta(days=31)
+sixty = today - datetime.timedelta(days=61)
+ninety = today - datetime.timedelta(days=91)
+
+for data in[
+    [today, thirty, 0.0],
+    [today, thirty, 0.0],
+    [today, sixty, 0.0],
+    [today, sixty, 0.0],
+    [today, ninety, 0.0],
+]:
+    rental = hmod.Rental()
+    rental.rental_time = data[0]
+    rental.due_date = data[1]
+    rental.discount_percent = data[2]
+    # rental.customer = data[3]
+    # rental.items_rented = data[4]
+    rental.save()
 
 
 # create products
