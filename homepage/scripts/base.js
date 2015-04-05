@@ -13,4 +13,9 @@ $(function() {
 
     });//show modal
 
+    //return alert
+    $('#return-btn').on('click', function(){
+        alert("Return processed successfully");
+    })
+
 });//ready

@@ -1,0 +1,33 @@
+<%inherit file="base.htm" />
+<%inherit file="base_inventory.html" />
+
+<%block name="content">
+    <div class="content">
+        <h3>Rental Management</h3>
+        <div class="pull-right">
+            <a role="button" class="btn btn-default btn-sm" href="/homepage/batch_process">Run Rental Batch</a>
+        </div>
+
+        <table id="users-table" class="table">
+            <tr>
+                <th>Rental ID</th>
+                <th>Due Date</th>
+                <th>Discount</th>
+                <th>Action</th>
+                <th></th>
+            </tr>
+
+            %for r in rentals:
+            <tr>
+                <td>${ r.id }</td>
+                <td>${ r.due_date }</td>
+                <td>${ r.discount_percent }</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" role="button" href="/homepage/rentals.returns/${ r.id }">Edit/Return</a>
+                </td>
+            </tr>
+            %endfor
+
+        </table>
+    </div>
+</%block>

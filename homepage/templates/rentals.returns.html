@@ -1,0 +1,75 @@
+<%inherit file="base.htm" />
+<%inherit file="base_inventory.html" />
+
+<%block name="content">
+    <div class="content">
+        <h3>Return Rental(s)</h3>
+
+        <hr>
+
+        <div id="return-info">
+            <div class="col-md-7 return-form">
+                <table class="table">
+                    <tr>
+                        <th>Rental ID</th>
+                        <td>${ rental.id }</td>
+                    </tr>
+                    <tr>
+                        <th>Rented By</th>
+                        <td>Baylor Tarrowes</td>
+                    </tr>
+                    <tr>
+                        <th>Rented On</th>
+                        <td>${ rental.rental_time }</td>
+                    </tr>
+                    <tr>
+                        <th>Due</th>
+                        <td>${ rental.due_date }</td>
+                    </tr>
+                    <tr>
+                        <th>Return handled by</th>
+                        <td>${ employee }</td>
+                    </tr>
+                    <tr>
+                        <th>Late Fee</th>
+                        <td>$ 5.00</td>
+                    </tr>
+                    <tr>
+                        <th>Condition</th>
+                        <td>Bad</td>
+                    </tr>
+                    <tr>
+                        <th>New Damages</th>
+                        <td>Several buttons are missing. Has three food stains</td>
+                        <td><button class="btn btn-primary btn-xs">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <th>Damage Fee</th>
+                        <td>$ 10.00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-5 return-desc">
+                <div>
+                        <label for="dmg-desc">Desciption of new damage:</label>
+                        <textarea class="form-control" id="dmg-desc" name="dmg-desc" rows="4"></textarea>
+                </div>
+                <br>
+                <div>
+                    <form class="form-horizontal">
+                        <label for="dmg-fee">Damage Fee:</label>
+                        <input type="number" id="dmg-fee" name="dmg-fee"/>
+                    </form>
+                </div>
+                <button id="dmg-btn" class="btn btn-default btn-xs">Save</button>
+            </div>
+            <br>
+            <hr>
+            <div>
+                <a id="return-btn" class="btn btn-warning" href="/homepage/rentals.return_complete/${ rental.id }">Process Return</a>
+            </div>
+        </div>
+
+
+    </div>
+</%block>
