@@ -96,7 +96,7 @@ def add(request):
             i = items[key]
             amt += i.standard_rental_price * items_cart[str(i.id)]
 
-        # for each item, calc the total
+        # for each product, calc the total
         for key in products:
             i = products[key]
             amt += i.current_price * products_cart[str(i.id)]
@@ -123,14 +123,15 @@ def delete(request):
     type = request.urlparams[1]
 
     items = {}
-    # products = {}
+    products = {}
 
     items_cart = {}
-    # products_cart = {}
+    products_cart = {}
 
     if type == "rental":
         # get the cart from the session
         items_cart = request.session.get('items_cart', {})
+        print('>>>>>>>>>>>>>>>>> item cart loaded')
         # pop the item off of the dictionary
         items_cart.pop(itemid)
 
@@ -138,26 +139,47 @@ def delete(request):
         request.session['items_cart'] = items_cart
 
     # else do the same for products
+    else:
+        # get the cart from the session
+        products_cart = request.session.get('products_cart', {})
+        print('>>>>>>>>>>>>>>>>> product cart loaded')
+        # pop the item off of the dictionary
+        products_cart.pop(itemid)
+        print('>>>>>>>>>>>>>>>>> popped')
 
+        # update the cart
+        request.session['products_cart'] = products_cart
 
     # get ready to send back to the view
     items_cart = request.session.get('items_cart', {})
+    products_cart = request.session.get('products_cart', {})
     amt = 0
 
     # for each item in the cart, add each one to the items dictionary for use in the template
     for item in hmod.Item.objects.filter(id__in=items_cart.keys()):
         items[str(item.id)] = item
 
+    # for each item in the cart, add each one to the items dictionary for use in the template
+    for product in hmod.Product.objects.filter(id__in=products_cart.keys()):
+        products[str(product.id)] = product
+
     # for each item, calc the total
     for key in items:
         i = items[key]
         amt += i.standard_rental_price * items_cart[str(i.id)]
+
+    # for each product, calc the total
+    for key in products:
+        i = products[key]
+        amt += i.current_price * products_cart[str(i.id)]
 
     # load params
     params = {
         'items': items,
         'items_cart': items_cart,
         # do the same for products
+        'products': products,
+        'products_cart': products_cart,
         'amt': amt
     }
 
