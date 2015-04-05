@@ -169,8 +169,8 @@ class Rental(models.Model):
     rental_time = models.TimeField()
     due_date = models.DateField()
     discount_percent = models.FloatField()
-    customer = models.ForeignKey('User', null= True)
-    items_rented = models.ManyToManyField('Rentable_Item', through='Rented_Item')
+    customer = models.ForeignKey('User', null=True)
+    items_rented = models.ManyToManyField('Rentable_Item', through='Rented_Item', null=True)
 
 
 class Return(models.Model):
