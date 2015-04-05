@@ -28,12 +28,12 @@ def email_receipt(request):
 
     # email logic goes here
     email_subject = "Your CHF Receipt"
-    email_body = templater.render(request,'receipt_email.html', params)
-    from_email = 'admin@colheritagefoundation.com'
-    to_email = 'riderm17@gmail.com'
+    email_body = templater.render(request, 'receipt_email.html', params)
+    from_email = 'riderm17@gmail.com'
+    to_email = ['riderm17@gmail.com']
 
-    send_mail(email_subject, email_body, from_email, [to_email], html_message=email_body, fail_silently=False)
+    send_mail(email_subject, email_body, from_email, to_email, html_message=email_body, fail_silently=False)
 
-    print('>>>>>>>>>>>>>>>> testing')
+    print('>>>>>>>>>>>>>>>> email sent to')
 
     return templater.render_to_response(request, 'receipt.html', params)

@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_mako_plus.controller',
+    'password_reset',
     'homepage',
     'account',
     'catalogue',
@@ -59,6 +60,13 @@ ROOT_URLCONF = 'sprint2.urls'
 
 WSGI_APPLICATION = 'sprint2.wsgi.application'
 
+
+# Email settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rhoadsjmr@gmail.com'
+EMAIL_HOST_PASSWORD = 'maxwell24'
+EMAIL_PORT = '587'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
