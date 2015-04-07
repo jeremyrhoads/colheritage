@@ -4,7 +4,7 @@ __author__ = 'MCR'
 
 # initialize django
 import os
-os.environ['DJANGO_SETTINGS_MODULE'] = 'sprint2.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'colheritage.settings'
 import django
 django.setup()
 

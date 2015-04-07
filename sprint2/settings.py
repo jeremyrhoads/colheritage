@@ -1,5 +1,5 @@
 """
-Django settings for sprint2 project.
+Django settings for colheritage project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -56,9 +56,9 @@ MIDDLEWARE_CLASSES = (
     'django_mako_plus.controller.router.RequestInitMiddleware',
 )
 
-ROOT_URLCONF = 'sprint2.urls'
+ROOT_URLCONF = 'colheritage.urls'
 
-WSGI_APPLICATION = 'sprint2.wsgi.application'
+WSGI_APPLICATION = 'colheritage.wsgi.application'
 
 
 # Email settings
