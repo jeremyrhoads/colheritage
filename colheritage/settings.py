@@ -64,8 +64,8 @@ WSGI_APPLICATION = 'colheritage.wsgi.application'
 # Email settings
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'rhoadsjmr@gmail.com'
-EMAIL_HOST_PASSWORD = 'maxwell24'
+EMAIL_HOST_USER = 'colheritagefoundation@gmail.com'
+EMAIL_HOST_PASSWORD = 'Fergalicious12'
 EMAIL_PORT = '587'
 
 # Database
