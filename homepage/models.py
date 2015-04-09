@@ -77,7 +77,7 @@ class Product(models.Model):
 
 
 class Product_Picture(models.Model):
-    picture = models.ImageField()
+    # picture = models.ImageField()
     caption = models.TextField(max_length=30)
     product = models.ForeignKey('Product')
 
